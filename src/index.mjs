@@ -49,23 +49,123 @@
  * テンプレート文字列
  */
 // 文字列の中にJavascriptの変数を便利に埋め込めるようになった
-const name = "イワシ";
-const age = 28;
-// 「私の名前はイワシです。年齢は24歳です。」
+// const name = "イワシ";
+// const age = 28;
+// // 「私の名前はイワシです。年齢は24歳です。」
 
-// 従来の方法
-const message1 = "私の名前は" + name + "です。年齢は" + age + "です。";
-console.log(message1);
+// // 従来の方法
+// const message1 = "私の名前は" + name + "です。年齢は" + age + "です。";
+// console.log(message1);
 
-// テンプレート文字列を用いた方法
-// shift+@マークのバッククォートで囲む
-const message2 = `私の名前は${name}です。年齢は${age}です`;
-console.log(message2);
+// // テンプレート文字列を用いた方法
+// // shift+@マークのバッククォートで囲む
+// const message2 = `私の名前は${name}です。年齢は${age}です`;
+// console.log(message2);
 
 /**
  * アロー関数
  */
 // 従来の関数
-function func1() {
-    
+// function func1(str) {
+//   return str;
+// }
+// const func1 = function (str) {
+//   return str;
+// };
+// console.log(func1("func1です"));
+
+// // アロー関数
+// // カッコを省略することも可能
+// // returnを省略することも可能
+// const func2 = (str) => {
+//   return str;
+// };
+// console.log(func2("func2です"));
+
+// const func3 = (num1, num2) => num1 + num2;
+
+// console.log(func3(10, 20));
+
+/**
+ * 分割代入
+ */
+// 設定項目や変数名長い場合に便利
+// const myProfile = {
+//   name: "イワシ",
+//   age: "24",
+// };
+
+// const message1 = `名前は${myProfile.name}です。年齢は${myProfile.age}歳です。`;
+// console.log(message1);
+
+// // 処理の最初でプロパティを抜き出す。
+// const {name, age} = myProfile;
+// const message2 = `名前は${name}です。年齢は${age}歳です。`;
+// console.log(message2);
+
+// const myProfile = ["イワシ", 24];
+
+// const message3 = `名前は${myProfile[0]}です。年齢は${myProfile[1]}歳です。`;
+// console.log(message3);
+
+// const [name, age] = myProfile;
+// const message4 = `名前は${name}です。年齢は${age}です。`;
+// console.log(message4);
+
+/**
+ * デフォルト値、引数など
+ */
+// 初期値=デフォルト値
+// const sayHello = (name = "ゲスト") => console.log(`こんにちは！${name}さん！`);
+// // sayHello("イワシ");
+// sayHello();
+
+/**
+ * スプレッド構文 これのこと→ ...
+ */
+// 配列の展開
+// const arr1 = [1, 2];
+// // console.log(arr1);
+// // // 配列の中身を順番に処理して表示
+// // console.log(...arr1);
+
+// const sumFunc = (num1, num2) => console.log(num1 + num2);
+// sumFunc(arr1[0], arr1[1]);
+// sumFunc(...arr1);
+
+// まとめる
+// const arr2 = [1, 2, 3, 4, 5];
+// // スプレッド構文を用いて残り全部受け取る
+// const [num1, num2, ...arr3] = arr2;
+// console.log(num1);
+// console.log(num2);
+// console.log(arr3);
+
+// 配列のコピー、結合
+// 参照渡し？に影響するので覚えると不具合の元を減らせる。
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
+
+// const arr6 = [...arr4];
+// arr6[0] = 100;
+// console.log(arr6);
+// console.log(arr4);
+
+// const arr7 = [...arr4, ...arr5];
+// console.log(arr7);
+
+// const arr8 = arr4;
+// console.log(arr8);
+// arr8[0] = 100;
+// console.log(arr4);
+
+/**
+ * mapやfilterを使った配列の処理
+ */
+// 従来のfor文をほぼ使わなくなったらしい
+const nameArr = ["田中", "山田", "イワシ"];
+for (let index = 0; index < nameArr.length; index++) {
+  console.log(nameArr[index]);
 }
+
+const nameArr2
